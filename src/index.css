@@ -1,0 +1,128 @@
+/* 
+all colors:
+
+*/
+
+
+:root {
+  font-family:'Montserrat';
+  background-color: var(--six-color);
+
+  --first-color:#F5F5F5;
+  --second-color:#686769;
+  --third-color:#3C6E71;
+  --fourth-color:#79B473;
+  --fifth-color:#FF8C63;
+  --six-color:#4C3957;
+  --seventh-color:#C2C2C2;
+  --eigth-color:#2F2E41;
+}
+
+
+header {
+  background-color: var(--six-color);
+  color: var(--first-color);
+  font-weight: 300;
+}
+
+footer {
+  background-color: var(--six-color);
+  color: var(--first-color);
+}
+
+main{
+  background-color: var(--first-color);
+}
+
+nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.left{
+  display: flex;
+  gap: 20px;
+}
+
+.right{
+  display: flex;
+  position: absolute;
+  left: 75%;
+  top: 10px;
+}
+
+li {
+  display: inline;
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+  color: var(--six-color);
+}
+
+form {
+  background-color: var(--first-color);
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+/* Styling form-control Class */
+.form-control {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+/* Styling form-control Label */ 
+.form-control label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Styling form-control input, 
+select, textarea */
+.form-control input,
+.form-control select,
+.form-control textarea {
+  border: 1px solid #777;
+  border-radius: 2px;
+  font-family: inherit;
+  padding: 10px;
+  display: block;
+  width: 95%;
+}
+
+/* Styling form-control Radio 
+button and Checkbox */
+.form-control input[type="radio"],
+.form-control input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+}
+
+/* Styling Button */
+button {
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}

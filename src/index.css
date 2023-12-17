@@ -41,12 +41,12 @@ nav {
   overflow: hidden;
 }
 
-.left{
+.left-nav{
   display: flex;
   gap: 20px;
 }
 
-.right{
+.right-nav{
   display: flex;
   position: absolute;
   left: 75%;
@@ -72,57 +72,129 @@ h1 {
   color: var(--six-color);
 }
 
-form {
-  background-color: var(--first-color);
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 30px 20px;
-  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+.surveys-container{ 
+  display: flex; 
+  flex-direction: column;
+  text-align: center;
+  gap: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+} 
+.small-surveys-card{
+  box-shadow: 2px 5px 10px rgba(61, 61, 61, 0.5);
+  border-radius: 10px;
+  width: 1100px;
+  height: 245px;
+  align-self: center;
 }
-/* Styling form-control Class */
-.form-control {
+
+.survey-card-container{
+  display: flex; 
+  flex-direction: row;
+}
+
+.survey-card-left{
+  width: 50%; 
+  padding-left: 30px;
   text-align: left;
-  margin-bottom: 25px;
 }
 
-/* Styling form-control Label */ 
-.form-control label {
-  display: block;
+.survey-card-right{
+  width: 50%; 
+  padding-right: 30px;
+  padding-top: 30px;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.survey-card-creator{
+  color: #FF8C63;
+}
+.survey-card-title{
+  color: #686769;
+}
+.survey-card-description{
+  color: black;
+}
+.survey-card-price span{
+  
+  color: #79B473;
+  font-size:xx-large;
+}
+.survey-card-price small{
+  color: #2F2E41;
+}
+.survey-card-price{
+  margin-right: 250px;
+}
+
+.survey-card-button-link{
   margin-bottom: 10px;
-}
-
-/* Styling form-control input, 
-select, textarea */
-.form-control input,
-.form-control select,
-.form-control textarea {
-  border: 1px solid #777;
-  border-radius: 2px;
-  font-family: inherit;
-  padding: 10px;
-  display: block;
-  width: 95%;
-}
-
-/* Styling form-control Radio 
-button and Checkbox */
-.form-control input[type="radio"],
-.form-control input[type="checkbox"] {
+  margin-top: 10px;
+  margin-right: 150px;
   display: inline-block;
-  width: auto;
+  height: 50px;
+  width: 234px;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 50px;
+  align-content:center;
+  background-color:#3C6E71;
+  color: white;
 }
 
-/* Styling Button */
+/* .survey-card-button-link:hover{
+  box-shadow: 2px 5px 10px rgba(61, 61, 61, 0.5);
+  text-decoration: underline;
+} */
+.link-class:hover{
+  box-shadow: 2px 5px 10px rgba(61, 61, 61, 0.5);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.survey-card-time-to-spend{
+  margin-right: 150px;
+  color: #686769;
+}
+a {
+    all: unset;
+}
+
+.login-page-container{
+  margin: 0 auto; 
+  margin-top: 10%;
+  color: #686769;
+  height: 500px;
+  width: 379px;
+}
+
+.login-page-container h2{
+  color: #686769;
+  font-weight:bold;
+}
+
+input[type=text], input[type=password] {
+  border-radius: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/* Set a style for all buttons */
 button {
-  display: block;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  margin-left: 50px;
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  background-color:#79B473;
+  border-radius: 10px;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
 }

@@ -1,33 +1,50 @@
-import Surveys from '../../pages/Surveys/Surveys'
-import {  Route, Routes } from 'react-router-dom'
-import Header from '../Header/Header'
-import { cssDefault } from '../../moks/css';
-import { json } from '../../moks/json';
-import Footer from '../Footer/Footer';
+import { Routes, Route } from "react-router-dom";
+import { cssDefault } from "../../moks/css";
+import Surveys from "../../pages/Surveys/Surveys";
+import SurveyCreatorWidget from "../CreateSurvey/CreateSurvey";
+import Footer from "../Footer/Footer";
+import NotFound from "../NotFound/NotFound";
+import Header from "../Header/Header";
+import { surveysMocks } from "../../moks/surveys";
+import { json } from "../../moks/json";
+import Survey from "../Survey/Survey";
+import Login from "../../pages/Login/Login";
+import Profile from "../../pages/Profile/Profile";
+import Register from "../../pages/Register/Register";
+
 export default function App() {
   return (
-    <div className='app'>
+    <main className='app'>
       <Header/>
       <Routes>
-        <Route path='/' element={
-          <Surveys 
+      <Route path='/' element={
+          <Surveys surveys={surveysMocks}/>
+        }/>
+        <Route path='/survey' element={
+          <Survey 
           css={cssDefault} 
           json={json}
           onComplete={(sender) => {
             console.log(JSON.stringify(sender.data, null, 3));
         }}/>
         }/>
-        {/* <Route path='' element={
-          <Surveys/>
+        <Route path='/create' element={
+          <SurveyCreatorWidget/>
         }/>
-        <Route path='' element={
-          <Surveys/>
+        <Route path='/login' element={
+          <Login/>
         }/>
-        <Route path='' element={
-          <Surveys/>
-        }/> */}
+        <Route path='/register' element={
+          <Register/>
+        }/>
+        <Route path='/profile' element={
+          <Profile/>
+        }/>
+        <Route path='*' element={
+          <NotFound/>
+        }/>
       </Routes>
       <Footer/>
-    </div>
+    </main>
   )
 }

@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.19.0",
     "sort-by": "^1.2.0",
+    "survey-creator-react": "^1.9.120",
     "survey-react-ui": "^1.9.118"
   },
   "devDependencies": {

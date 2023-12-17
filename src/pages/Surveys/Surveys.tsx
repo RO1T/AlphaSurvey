@@ -1,20 +1,20 @@
-import { Model } from "survey-core";
-import { Survey } from "survey-react-ui";
-import "survey-core/defaultV2.min.css";
+import SurveyCard from "../../components/SurveyCard/SurveyCard";
+import { SurveyProps } from "../../const/types";
 
-type SurveyComponentProps = {
-    css: object;
-    json: object;
-    onComplete: (sender: any) => void
+type SurveysComponentProps = {
+    surveys: SurveyProps[];
 }
 
-function SurveyComponent({css, json, onComplete}: SurveyComponentProps) {
-    const survey = new Model(json);
-
-    survey.applyTheme(css);
-    survey.onComplete.add(onComplete);
-
-    return (<Survey model={survey}/>);
+export default function Surveys({surveys}:SurveysComponentProps){
+    return (
+          <div className="surveys-container">
+        {surveys.map((surveyCard) =>
+        (
+          <article className="small-surveys-card" key={surveyCard.id}>
+            <SurveyCard {...surveyCard} />
+          </article>
+        )
+      )}
+        </div>
+    );
 }
-
-export default SurveyComponent;

@@ -4,22 +4,22 @@ export default function Header() {
     return (
     <header>
             <nav>
-                <ul className="left">
-                    <img src='/Vector.svg'/>
+                <ul className="left-nav">
+                        <Link className="link-class-logo" to={"/"}><img src='/Vector.svg'/></Link>
                     <li>
-                        <Link to={""}>Опросы</Link>
+                        <Link to={"/"} className="link-class">Опросы</Link>
                     </li>
                     <li>
-                        <Link to={""}>Интервью</Link>
+                        <Link to={"/survey"} className="link-class">Созданный опрос</Link>
+                    </li>
+                    <li>
+                        <Link to={"/create"} className="link-class">Создать опрос</Link>
                     </li>
                 </ul>
-                <ul className="right">
+                <ul className="right-nav">
                     <li>
-                        <Link to={""}>Регистрация</Link>
+                        <Link to={"/login"} className="link-class">Вход</Link>
                     </li>
-                    {/* для залогиненных <li>
-                        <a>Вход</a>
-                    </li> */}
                 </ul>
             </nav>
         </header>

@@ -11,6 +11,7 @@ import Survey from "../Survey/Survey";
 import Login from "../../pages/Login/Login";
 import Profile from "../../pages/Profile/Profile";
 import Register from "../../pages/Register/Register";
+import BProfile from "../../pages/BProfile/BProfile";
 
 export default function App() {
   return (
@@ -39,6 +40,9 @@ export default function App() {
         }/>
         <Route path='/profile' element={
           <Profile/>
+        }/>
+        <Route path='/b/profile' element={
+          <BProfile/>
         }/>
         <Route path='*' element={
           <NotFound/>

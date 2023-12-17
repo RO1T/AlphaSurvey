@@ -1,37 +1,43 @@
-export default function bProfile() {
+export default function BProfile() {
     return(
-        <div className="profile-page-container">
-            <div className="profile-info-container">
-                <h2>Ваш профиль</h2>
-                <div className="profile-info-card-container">
-                    <img/>
-                    <h3>Имя компании</h3>
-                    <p>Передовое предприятие, предлагающее инновационные решения в различных отраслях. 
-                        Стремясь к совершенству, мы поставляем исключительные продукты и услуги, 
-                        которые удовлетворяют растущие потребности наших клиентов по всему миру.</p>
-                    <div className="edit-profile-button">Редактировать профиль</div>
-                </div>
+    <div className="profile-container">
+        <h2>Ваш профиль</h2>
+
+        <div className="info-container">
+            <div className="info-container-avatar">
+                <img
+                    loading="lazy"
+                    srcSet="..."
+                    alt="avatar-profile"
+                    className="img-avatar" />
+                <h3 className="info-name">Имя компании</h3>
             </div>
-            <div className="profile-recently-survey-container">
-                <h3>Опросы</h3>
-                <div className="profile-card">
-                    <h4>Недавние опросы</h4>
-                    <div className="recently-surveys-cards">
-                        <div className="recently-surveys-card">
-                            <div className="recently-surveys-card-name">Имя опроса</div>
-                            <div>Опрос</div>
-                        </div>
-                        <div className="recently-surveys-card">
-                            <div className="recently-surveys-card-name">Имя опроса</div>
-                            <div>Опрос</div>
-                        </div>
-                        <div className="recently-surveys-card">
-                            <div className="recently-surveys-card-name">Имя опроса</div>
-                            <div>Опрос</div>
-                        </div>
-                    </div>
+            <p className="info-description">
+                Передовое предприятие, предлагающее инновационные решения в
+                различных отраслях. Стремясь к совершенству, мы поставляем
+                исключительные продукты и услуги, которые удовлетворяют растущие
+                потребности наших клиентов по всему миру.{" "}
+            </p>
+        </div>
+        
+        <div className="button-profile">Редактировать профиль</div>
+        <div className="button-profile">Создать опрос</div>
+
+        <div className="surveys-recently-container">
+            <h2>Недавние опросы</h2>
+
+            <div className="surveys-recently-card-container">
+                <div className="survyes-row">
+                    <div className="survey-card-creator"><h4>Опрос о том</h4></div>
+                </div>
+                <div className="survyes-row">
+                    <div className="survey-card-creator"><h4>Опрос о сем</h4></div>
+                </div>
+                <div className="survyes-row">
+                    <div className="survey-card-creator"><h4>Опрос о том и сем</h4></div>
                 </div>
             </div>
         </div>
+    </div>
     );
   }

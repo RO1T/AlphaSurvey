@@ -20,6 +20,12 @@ export default function Header() {
                     <li>
                         <Link to={"/login"} className="link-class">Вход</Link>
                     </li>
+                    <li>
+                        <Link to={"/b/profile"} className="link-class">ПрофильБизнес</Link>
+                    </li>
+                    <li>
+                        <Link to={"/profile"} className="link-class">ПрофильЮзер</Link>
+                    </li>
                 </ul>
             </nav>
         </header>

@@ -1,54 +1,67 @@
-import { Routes, Route } from "react-router-dom";
-import { cssDefault } from "../../moks/css";
-import Surveys from "../../pages/Surveys/Surveys";
-import SurveyCreatorWidget from "../CreateSurvey/CreateSurvey";
-import Footer from "../Footer/Footer";
-import NotFound from "../NotFound/NotFound";
-import Header from "../Header/Header";
-import { surveysMocks } from "../../moks/surveys";
-import { json } from "../../moks/json";
-import Survey from "../Survey/Survey";
-import Login from "../../pages/Login/Login";
-import Profile from "../../pages/Profile/Profile";
-import Register from "../../pages/Register/Register";
-import BProfile from "../../pages/BProfile/BProfile";
+import { Routes, Route } from 'react-router-dom'
+import { cssDefault } from '../../const/css'
+import Surveys from '../../pages/Surveys/Surveys'
+import SurveyCreatorWidget from '../CreateSurvey/CreateSurvey'
+import Footer from '../Footer/Footer'
+import NotFound from '../NotFound/NotFound'
+import Header from '../Header/Header'
+import Survey from '../Survey/Survey'
+import Login from '../../pages/Login/Login'
+import Profile from '../../pages/Profile/Profile'
+import BProfile from '../../pages/BProfile/BProfile'
+import { HelmetProvider } from 'react-helmet-async'
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
+import { AppRoute } from '../../const/routes'
 
 export default function App() {
-  return (
-    <main className='app'>
-      <Header/>
-      <Routes>
-      <Route path='/' element={
-          <Surveys surveys={surveysMocks}/>
-        }/>
-        <Route path='/survey' element={
-          <Survey 
-          css={cssDefault} 
-          json={json}
-          onComplete={(sender) => {
-            console.log(JSON.stringify(sender.data, null, 3));
-        }}/>
-        }/>
-        <Route path='/create' element={
-          <SurveyCreatorWidget/>
-        }/>
-        <Route path='/login' element={
-          <Login/>
-        }/>
-        <Route path='/register' element={
-          <Register/>
-        }/>
-        <Route path='/profile' element={
-          <Profile/>
-        }/>
-        <Route path='/b/profile' element={
-          <BProfile/>
-        }/>
-        <Route path='*' element={
-          <NotFound/>
-        }/>
-      </Routes>
-      <Footer/>
-    </main>
-  )
+	return (
+		<HelmetProvider>
+			<main className='app'>
+				<Header/>
+				<Routes>
+					<Route path={AppRoute.Root} element={
+						<PrivateRoute>
+							<Surveys/>
+						</PrivateRoute>
+					}/>
+
+					<Route path={AppRoute.Survey} element={
+						<PrivateRoute>
+							<Survey 
+								css={cssDefault} />
+						</PrivateRoute>
+
+					}/>
+					<Route path={AppRoute.CreateSurvey} element={
+						<PrivateRoute>
+							<SurveyCreatorWidget/>
+						</PrivateRoute>
+
+					}/>
+
+					<Route path={AppRoute.Login} element={
+						<Login/>
+					}/>
+
+					<Route path={AppRoute.Profile} element={
+						<PrivateRoute>
+							<Profile/>
+						</PrivateRoute>
+
+					}/>
+					<Route path={AppRoute.bProfile} element={
+						<PrivateRoute>
+							<BProfile/>
+						</PrivateRoute>
+
+					}/>
+
+					<Route path={AppRoute.NotFound} element={
+						<NotFound/>
+					}/>
+				</Routes>
+				<Footer/>
+			</main>
+		</HelmetProvider>
+	)
 }

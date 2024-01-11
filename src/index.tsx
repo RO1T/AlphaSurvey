@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client'
 import App from './components/App/App.tsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from './redux/store/index.ts'
+import { checkAuthAction } from './redux/store/api-actions.ts'
+
+store.dispatch(checkAuthAction())
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+	<React.StrictMode>
+		<Provider store={store}>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</Provider>
+	</React.StrictMode>
 )
